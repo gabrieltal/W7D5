@@ -10,6 +10,7 @@ class Display
   end
 
   def render
+<<<<<<< HEAD
     system('clear')
     board.grid.each_index do |row|
       board.grid[row].each_index do |col|
@@ -33,6 +34,10 @@ class Display
     loop do
     render
     cursor.get_input
+=======
+    board.grid.each do |row|
+      p row
+>>>>>>> 6f4d110356dde3dc83fe6297b31be36e6739128c
     end
   end
 end

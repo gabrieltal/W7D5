@@ -41,7 +41,10 @@ class Cursor
 
   def get_input
     key = KEYMAP[read_char]
+<<<<<<< HEAD
     p "key in get_input is set to: #{key}"
+=======
+>>>>>>> 6f4d110356dde3dc83fe6297b31be36e6739128c
     handle_key(key)
   end
 
@@ -99,7 +102,7 @@ class Cursor
     # down: [1, 0]
 
     #[0,0] => left [0, 7]
-  
+
     cursor_pos[0] += diff[0]
     cursor_pos[-1] += diff[-1]
 

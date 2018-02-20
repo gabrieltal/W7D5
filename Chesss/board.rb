@@ -35,7 +35,10 @@ class Board
     end
   end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6f4d110356dde3dc83fe6297b31be36e6739128c
   # def display_render
   #   Display.render(self)
   # end
