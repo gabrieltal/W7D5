@@ -41,6 +41,7 @@ class Cursor
 
   def get_input
     key = KEYMAP[read_char]
+    p "key in get_input is set to: #{key}"
     handle_key(key)
   end
 
@@ -76,18 +77,37 @@ class Cursor
   end
 
   def handle_key(key)
+    p "handle key is taking key: #{key}"
+    p "#{key.class}"
     case key
-    when "\r" || " "
+    when :space, :return
       return @cursor_pos
-    when "a" || "s" || "w" || "d"
-      update_pos(MOVES[KEYMAP[key]])
+    when :left, :right, :up, :down
+      p "it's right"
+      update_pos(MOVES[key])
       return nil
-    when "\u0003"
+    when :ctrl_c
       Process.exit(0)
     end
   end
 
   def update_pos(diff)
-    @cursor_pos = diff
+    p "we printin the difference: #{diff}"
+    # left: [0, -1],
+    # right: [0, 1],
+    # up: [-1, 0],
+    # down: [1, 0]
+
+    #[0,0] => left [0, 7]
+  
+    cursor_pos[0] += diff[0]
+    cursor_pos[-1] += diff[-1]
+
+    cursor_pos[0] = 7 if cursor_pos[0] < 0
+    cursor_pos[0] = 0 if cursor_pos[0] > 7
+    cursor_pos[-1] = 7 if cursor_pos[-1] < 0
+    cursor_pos[-1] = 0 if cursor_pos[-1] > 7
+
+
   end
 end

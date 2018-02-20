@@ -35,6 +35,7 @@ class Board
     end
   end
 
+
   # def display_render
   #   Display.render(self)
   # end
