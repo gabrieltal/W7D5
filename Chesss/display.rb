@@ -10,19 +10,27 @@ class Display
   end
 
   def render
-<<<<<<< HEAD
     system('clear')
+    is_blk = false
+    is_sel = cursor.selected
+    p cursor.selected
     board.grid.each_index do |row|
       board.grid[row].each_index do |col|
         pos = [row, col]
+        color = is_blk ? :black : :white
+        o_color = is_blk ? :white : :black
+        cursor_col = is_sel ? :blue : :yellow
         if pos == cursor.cursor_pos
-          print "#{board[pos].to_s}\t".colorize(:blue)
+          print "#{board[pos].to_s}".colorize(color: cursor_col, background: color)
         else
-          print "#{board[pos].to_s}\t".colorize(:red)
+          print "#{board[pos].to_s}".colorize(color: o_color, background: color)
         end
+        is_blk = !is_blk
 
       end
+      is_blk = !is_blk
       print "\n"
+
     end
     # board.grid.each do |row|
     #   p row
@@ -31,13 +39,11 @@ class Display
   end
 
   def loopin
+    # loop do
     loop do
     render
-    cursor.get_input
-=======
-    board.grid.each do |row|
-      p row
->>>>>>> 6f4d110356dde3dc83fe6297b31be36e6739128c
+    input = cursor.get_input
+    break if input != nil
     end
   end
 end
