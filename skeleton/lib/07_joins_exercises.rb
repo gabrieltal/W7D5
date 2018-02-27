@@ -113,15 +113,19 @@ def andrews_films_and_leads
   # Andrews' played in.
   execute(<<-SQL)
     SELECT
-      title, name
+      title, lead_actor.name
     FROM
       movies
     JOIN
       castings ON castings.movie_id = movies.id
     JOIN
       actors ON actors.id = castings.actor_id
+    JOIN
+      castings AS lead_castings ON lead_castings.movie_id = movies.id
+    JOIN
+      actors AS lead_actor ON lead_actor.id = lead_castings.actor_id
     WHERE
-      name = 'Julie Andrews'
+      actors.name = 'Julie Andrews' AND lead_castings.ord = 1
 
   SQL
 end
