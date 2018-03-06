@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(params[:user].permit(:name, :email))
+    user = User.new(params[:user].permit(:username))
     if user.save
       render json: user
     else
@@ -16,25 +16,34 @@ class UsersController < ApplicationController
 
   def show
     user = User.find(params[:id])
-    render json: user
+    if user
+      render json: user
+    else
+      render plain: "User doesn't exist"
+    end
   end
 
   def update
     user = User.find(params[:id])
-    new_values = params[:user]
-    new_values.each do |key, value|
-      user[key] = value
-    end
-    if user.save
+    if user.update_attributes(user_params)
       render json: user
     else
-      render json: user.errors.full_messages, status: :unprocessable_entity
+      render plain: "Wrong!", status: 422
     end
   end
 
   def destroy
     user = User.find(params[:id])
     user.destroy
-    render plain:'OK DELETED'
+    render json: user
+  end
+
+  def artworks
+    user_art = Artwork.find_by(artist_id: params[:id])
+    render json: user_art
+  end
+
+  def user_params
+    params.require(:user).permit(:username)
   end
 end

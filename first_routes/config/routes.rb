@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   patch 'users/:id',to: 'users#update'
   put 'users/:id',to: 'users#update'
   delete 'users/:id', to: 'users#destroy'
+  get '/users/:user_id/artworks', to: 'users#artworks'
+
+  resources :artworks
+
+  resources :artwork_shares
 end
