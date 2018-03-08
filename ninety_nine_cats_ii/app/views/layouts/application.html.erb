@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NinetyNineCats</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+      <% if current_user %>
+        <%= "Welcome #{current_user.username}, yo" %>
+        <%= button_to "Logout yo!", session_url, method: 'delete'%>
+      <% else %>
+        <% unless controller_name == "sessions" %>
+          <%= link_to "Login, yo!", new_session_url%>
+        <% end %>
+        <% unless controller_name == "users" %>
+          <%= link_to "Create an account, yo!", new_user_url%>
+        <% end %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>
