@@ -1,0 +1,11 @@
+<h1>Add in that rad new band! </h1>
+
+<form action="<%= bands_url %> " method="post">
+  <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
+
+  <label>Name
+    <input type="text" name="band[name]" value="">
+  </label>
+  <br>
+  <button>Add in band</button>
+</form>

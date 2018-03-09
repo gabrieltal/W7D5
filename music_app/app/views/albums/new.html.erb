@@ -1,0 +1,19 @@
+<h1>Add in that sick new album! </h1>
+
+<form action="<%= albums_url %> " method="post">
+  <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
+
+  <label> Title:
+    <input type="text" name="album[name]" value="">
+  </label> <br>
+
+  <label> Year:
+    <input type="text" name="album[name]" value="">
+  </label> <br>
+
+  <label> Type:
+    <input type="text" name="album[name]" value="">
+  </label>
+  <br>
+  <button>Add album!</button>
+</form>
