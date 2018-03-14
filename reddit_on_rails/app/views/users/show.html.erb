@@ -1,0 +1,15 @@
+<h1> <%= @user.username %> </h1>
+
+<ul>
+  <% if @user.posts.exists? %>
+    <% @user.posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post_url(post) %>
+      <%= link_to 'Edit Post', edit_post_url(post) %>
+      <%= button_to 'Delete Post', posts_url(post), method: :delete %>
+    </li>
+    <% end %>
+  <% else %>
+    <h3>You have no posts!</h3>
+  <% end %>
+</ul>

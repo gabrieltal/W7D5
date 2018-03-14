@@ -1,0 +1,12 @@
+<h3><%= @comment.content %></h3>
+<h5>by: <%= User.find(@comment.author_id) %></h5>
+
+<form action="<%= comments_url %>" method="post">
+  <%= auth_token_input %>
+  <label>
+    content
+    <input type="text" name="comment[content]">
+  </label>
+
+  <input type="submit" value="submit comment">
+</form>

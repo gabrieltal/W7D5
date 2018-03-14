@@ -1,0 +1,12 @@
+<h1>create new sub</h1>
+
+<form action="<%= subs_url %>" method="post">
+  <%= auth_token_input %>
+  <label>title
+    <input type="text" name="sub[title]">
+  </label>
+  <label>description
+    <input type="text" name="sub[description]">
+  </label>
+  <input type="submit" value="create new sub">
+</form>
