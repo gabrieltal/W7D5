@@ -1,0 +1,19 @@
+/* PHASE 10: Posts */
+.posts {
+  border-top: 1px solid #ccc;
+}
+
+aside {
+  display: flex;
+  flex-direction: row;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-info .post-links {
+  display: flex;
+  flex-direction: row;
+}

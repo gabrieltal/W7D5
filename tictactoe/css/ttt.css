@@ -1,0 +1,67 @@
+.board {
+  width: 650px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.square {
+  list-style-type: none;
+  float: left;
+  border: 5px solid black;
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+}
+
+.square:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.player-mark-o {
+  background-color: white;
+  color: green;
+  text-align: center;
+  font-weight: bold;
+  font-size: 150px;
+  font-family: sans-serif;
+}
+
+.player-mark-x {
+  background-color: white;
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  font-size: 150px;
+  font-family: sans-serif;
+}
+
+.over {
+  background-color: white;
+}
+
+.over:hover{
+  cursor: inherit;
+  background-color: white;
+}
+
+footer {
+  font-size: 40px;
+  font-family: sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+.winner {
+  color: white;
+  background-color: green;
+}
+
+.winner:hover {
+  background-color: green;
+  color: white;
+}
