@@ -1,0 +1,22 @@
+.clock-widget {
+  font-family: 'Indie Flower', cursive;
+  font-weight: bolder;
+  width: 40%;
+  background-color: yellow;
+  display: block;
+  border: 2px solid black;
+}
+
+.time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.clock-title {
+  font-family: 'Indie Flower', cursive;
+  font-weight: bolder;
+  margin: 0;
+}
