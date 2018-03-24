@@ -1,15 +1,16 @@
 .clock-widget, .tab-widget {
   font-family: 'Indie Flower', cursive;
   font-weight: bolder;
-  width: 40%;
+  width: 45vw;
   background-color: yellow;
-  display: block;
+  border-radius: 5px;
   border: 2px solid black;
 }
 
 .time {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px;
   font-size: 30px;
@@ -23,14 +24,42 @@
 
 .tab-widget {
   background-color: red;
+  padding: 5px 5px 5px 5px;
+  display: block;
+  width: 50vw;
+  border-radius: 5px;
 }
 
 .tab-Ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 0 5px 5px 5px;
+  margin: 0 5px 5px 5px;
+  border-bottom: 5px solid black;
 }
 
-.tab-widget li {
+.tab-Ul li {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+
+.tab-Ul li:first-child {
+  border-right: 5px solid black;
+}
+
+.tab-Ul li:last-child {
+  border-left: 5px solid black;
+}
+
+.tab-Ul li {
+  font-size: 30px;
   list-style-type: none;
+  padding-right: 10px;
+}
+
+.tab-Panel {
+  text-align: center;
 }

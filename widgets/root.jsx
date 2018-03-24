@@ -1,7 +1,7 @@
 import React from 'react';
 import Clock from "./frontend/clock";
 import Tabs from "./frontend/tab";
-
+import Weather from "./frontend/weather"
 class Root extends React.Component {
   constructor () {
     super();
@@ -20,7 +20,8 @@ class Root extends React.Component {
         <Clock />
         <h1 className="widget-title">Tabs</h1>
         <Tabs tabs={tabs} />
-
+        <h1 className="widget-title">Weather</h1>
+        <Weather />
       </div>
     );
   }

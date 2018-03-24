@@ -20,9 +20,9 @@ class Tabs extends React.Component {
     // }
     // let tabs = this.props.tabs.map((tab) => <li>{tab.title}</li>);
     let tabs = [
-      <li onClick={() => this.handleClick(0)}>{this.props.tabs[0].title}</li>,
-      <li onClick={() => this.handleClick(1)}>{this.props.tabs[1].title}</li>,
-      <li onClick={() => this.handleClick(2)}>{this.props.tabs[2].title}</li>
+      <li key={0} onClick={() => this.handleClick(0)}>{this.props.tabs[0].title}</li>,
+      <li key={1} onClick={() => this.handleClick(1)}>{this.props.tabs[1].title}</li>,
+      <li key={2} onClick={() => this.handleClick(2)}>{this.props.tabs[2].title}</li>
     ];
     return (
       <div className="tab-widget">
