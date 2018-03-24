@@ -1,4 +1,4 @@
-.clock-widget {
+.clock-widget, .tab-widget {
   font-family: 'Indie Flower', cursive;
   font-weight: bolder;
   width: 40%;
@@ -15,8 +15,22 @@
   font-size: 30px;
 }
 
-.clock-title {
+.widget-title {
   font-family: 'Indie Flower', cursive;
   font-weight: bolder;
   margin: 0;
+}
+
+.tab-widget {
+  background-color: red;
+}
+
+.tab-Ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tab-widget li {
+  list-style-type: none;
 }

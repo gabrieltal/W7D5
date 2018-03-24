@@ -4,20 +4,35 @@ class Tabs extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-        index: 0
+        selectedIndex: 0
       };
   }
 
+  handleClick (selectedIndex) {
+    this.setState({
+      selectedIndex
+    });
+  }
   render () {
+    // let tabs = [];
+    // for (var i = 0; i < 3; i++) {
+    //   tabs.push(<h1>this.props.tabs[i].title</h1>);
+    // }
+    // let tabs = this.props.tabs.map((tab) => <li>{tab.title}</li>);
+    let tabs = [
+      <li onClick={() => this.handleClick(0)}>{this.props.tabs[0].title}</li>,
+      <li onClick={() => this.handleClick(1)}>{this.props.tabs[1].title}</li>,
+      <li onClick={() => this.handleClick(2)}>{this.props.tabs[2].title}</li>
+    ];
     return (
       <div className="tab-widget">
-        <ul>
-          <h1>Hi</h1>
-          <h1>bye</h1>
-          <h1></h1>
+        <ul className="tab-Ul">
+          {tabs}
         </ul>
 
-        <article></article>
+        <article className="tab-Panel">
+          {this.props.tabs[this.state.selectedIndex].content}
+        </article>
       </div>
     );
   }

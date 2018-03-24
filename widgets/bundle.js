@@ -18310,22 +18310,29 @@ var Root = function (_React$Component) {
   function Root() {
     _classCallCheck(this, Root);
 
-    return _possibleConstructorReturn(this, (Root.__proto__ || Object.getPrototypeOf(Root)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Root.__proto__ || Object.getPrototypeOf(Root)).call(this));
   }
 
   _createClass(Root, [{
     key: "render",
     value: function render() {
+      var tabs = [{ title: "one", content: "I am the first" }, { title: "two", content: "Second pane here" }, { title: "three", content: "Third pane here" }];
+
       return _react2.default.createElement(
         "div",
         null,
         _react2.default.createElement(
           "h1",
-          { className: "clock-title" },
+          { className: "widget-title" },
           "Clock"
         ),
         _react2.default.createElement(_clock2.default, null),
-        _react2.default.createElement(_tab2.default, null)
+        _react2.default.createElement(
+          "h1",
+          { className: "widget-title" },
+          "Tabs"
+        ),
+        _react2.default.createElement(_tab2.default, { tabs: tabs })
       );
     }
   }]);
@@ -18472,33 +18479,60 @@ var Tabs = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Tabs.__proto__ || Object.getPrototypeOf(Tabs)).call(this, props));
 
     _this.state = {
-      index: 0
+      selectedIndex: 0
     };
     return _this;
   }
 
   _createClass(Tabs, [{
+    key: "handleClick",
+    value: function handleClick(selectedIndex) {
+      this.setState({
+        selectedIndex: selectedIndex
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
+      // let tabs = [];
+      // for (var i = 0; i < 3; i++) {
+      //   tabs.push(<h1>this.props.tabs[i].title</h1>);
+      // }
+      // let tabs = this.props.tabs.map((tab) => <li>{tab.title}</li>);
+      var tabs = [_react2.default.createElement(
+        "li",
+        { onClick: function onClick() {
+            return _this2.handleClick(0);
+          } },
+        this.props.tabs[0].title
+      ), _react2.default.createElement(
+        "li",
+        { onClick: function onClick() {
+            return _this2.handleClick(1);
+          } },
+        this.props.tabs[1].title
+      ), _react2.default.createElement(
+        "li",
+        { onClick: function onClick() {
+            return _this2.handleClick(2);
+          } },
+        this.props.tabs[2].title
+      )];
       return _react2.default.createElement(
         "div",
         { className: "tab-widget" },
         _react2.default.createElement(
           "ul",
-          null,
-          _react2.default.createElement(
-            "h1",
-            null,
-            "Hi"
-          ),
-          _react2.default.createElement(
-            "h1",
-            null,
-            "bye"
-          ),
-          _react2.default.createElement("h1", null)
+          { className: "tab-Ul" },
+          tabs
         ),
-        _react2.default.createElement("article", null)
+        _react2.default.createElement(
+          "article",
+          { className: "tab-Panel" },
+          this.props.tabs[this.state.selectedIndex].content
+        )
       );
     }
   }]);

@@ -3,12 +3,24 @@ import Clock from "./frontend/clock";
 import Tabs from "./frontend/tab";
 
 class Root extends React.Component {
+  constructor () {
+    super();
+  }
+
   render () {
+    let tabs = [
+      {title: "one", content: "I am the first"},
+      {title: "two", content: "Second pane here"},
+      {title: "three", content: "Third pane here"}
+    ];
+
     return (
       <div>
-        <h1 className="clock-title">Clock</h1>
+        <h1 className="widget-title">Clock</h1>
         <Clock />
-        <Tabs />
+        <h1 className="widget-title">Tabs</h1>
+        <Tabs tabs={tabs} />
+
       </div>
     );
   }
