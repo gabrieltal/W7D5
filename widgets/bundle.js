@@ -18721,16 +18721,75 @@ var AutoComplete = function (_React$Component) {
   function AutoComplete(props) {
     _classCallCheck(this, AutoComplete);
 
-    return _possibleConstructorReturn(this, (AutoComplete.__proto__ || Object.getPrototypeOf(AutoComplete)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (AutoComplete.__proto__ || Object.getPrototypeOf(AutoComplete)).call(this, props));
+
+    _this.state = {
+      searchInput: ""
+    };
+    _this.handleInput = _this.handleInput.bind(_this);
+    _this.selectName = _this.selectName.bind(_this);
+    return _this;
   }
 
   _createClass(AutoComplete, [{
+    key: 'handleInput',
+    value: function handleInput(event) {
+      this.setState({
+        searchInput: event.currentTarget.value
+      });
+    }
+  }, {
+    key: 'matches',
+    value: function matches() {
+      var _this2 = this;
+
+      var matches = [];
+      if (this.state.searchInput.length === 0) {
+        return this.props.names;
+      }
+
+      this.props.names.forEach(function (name) {
+        var sub = name.slice(0, _this2.state.searchInput.length);
+        if (sub.toLowerCase() === _this2.state.searchInput.toLowerCase()) {
+          matches.push(name);
+        }
+      });
+
+      if (matches.length === 0) {
+        matches.push('No matches');
+      }
+
+      return matches;
+    }
+  }, {
+    key: 'selectName',
+    value: function selectName(event) {
+      var name = event.currentTarget.innerText;
+      this.setState({ searchInput: name });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
+      var nameResults = this.matches().map(function (name, idx) {
+        return _react2.default.createElement(
+          'li',
+          { key: idx, onClick: _this3.selectName },
+          name
+        );
+      });
       return _react2.default.createElement(
         'div',
-        null,
-        ' '
+        { className: 'auto-Widget' },
+        _react2.default.createElement('input', { onChange: this.handleInput,
+          value: this.state.searchInput,
+          placeholder: 'Search...' }),
+        _react2.default.createElement(
+          'ul',
+          null,
+          nameResults
+        )
       );
     }
   }]);

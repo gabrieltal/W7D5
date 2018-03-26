@@ -92,3 +92,24 @@
   border: 0;
   margin: 0;
 }
+
+.auto-Widget {
+  font-family: 'Indie Flower', cursive;
+  background-color: skyblue;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  width: 35vw;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.auto-Widget input {
+  border-radius: 5px;
+  border: 2px solid black;
+  align-content: center;
+}
