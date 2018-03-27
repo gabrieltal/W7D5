@@ -1,16 +1,28 @@
 import React from 'react';
-import { allTodos } from '../../reducers/selectors';
+import ListContainer from './todo_list_container';
 import store from '../../store/store';
+import TodoListItem from './todo_list_item';
 
-// class TodoList extends React.Component {
-//   render () {
-//     const todosArray = allTodos(store().getState());
-//     return (
-//       <h3> Todo list goes here!!!</h3>
-//     );
-//   }
-// }
+class TodoList extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render () {
+    const keys = Object.keys(this.props.todos);
 
-// export default TodoList;
+    const items = keys.map( (id) => (
+      <TodoListItem key= {id.toString()}
+                    item = {this.props.todos[id]}/>
+    ));
 
-module.exports = () => <h3>Todo List goes here!</h3>;
+    console.warn(items);
+
+    return (
+      <ul>
+        { items }
+      </ul>
+    );
+  }
+}
+
+export default TodoList;
