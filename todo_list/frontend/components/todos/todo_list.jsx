@@ -13,4 +13,4 @@ import store from '../../store/store';
 
 // export default TodoList;
 
-export default TodoList () => <h3>Todo List goes here!</h3>;
+module.exports = () => <h3>Todo List goes here!</h3>;
