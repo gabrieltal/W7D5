@@ -27,6 +27,7 @@ const todosReducer = (state = initialState, action) => {
       // console.log(action.todo);
       // console.log(action.todo.id);
       // deep copy
+      console.log("reducer");
       const newState = merge({}, state);
       newState[action.todo.id] = action.todo;
       // console.log(newState);
