@@ -1,12 +1,12 @@
 import { RECEIVE_ALL_POKEMON, RECEIVE_POKE } from '../actions/pokemon_actions';
 
-export default function pokemonReducer (state={}, action) {
+export default function itemReducer (state={}, action) {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_POKEMON:
-      return action.pokemon;
+      return action.items;
     case RECEIVE_POKE:
-      return action.poke;
+      return action.items;
     default:
       return state;
   }

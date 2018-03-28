@@ -7,3 +7,11 @@ export const fetchAllPokemon = () => {
     dataType: "json"
   });
 };
+
+export const fetchPoke = (id) => {
+  return $.ajax({
+    url: `/api/pokemon/${id}`,
+    method: "GET",
+    dataType: "json"
+  });
+};

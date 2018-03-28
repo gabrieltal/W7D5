@@ -1,4 +1,6 @@
 import React from 'react';
+import PokemonIndexItem from './pokemon_index_item';
+import PokemonDetail from './pokemon_detail';
 
 class PokemonIndex extends React.Component {
   constructor(props) {
@@ -12,15 +14,14 @@ class PokemonIndex extends React.Component {
   }
 
   render () {
-    const pokemonArray = [];
-    this.props.pokemon.forEach((poke) => {
-      pokemonArray.push(<li key={poke.id}>{poke.name}<img src={poke.image_url}/></li>);
-    });
-
+    const pokemonItems = this.props.pokemon.map(poke => <PokemonIndexItem key={poke.id} pokemon={poke} />);
     return (
-      <ul>
-        {pokemonArray}
-      </ul>
+      <div>
+        <Route path={`/pokemon/${this.props.match.params.pokemonId}`} component={PokemonDetail} />
+        <ul>
+          {pokemonItems}
+        </ul>
+      </div>
     );
   }
 }
