@@ -15,3 +15,12 @@ export const fetchPoke = (id) => {
     dataType: "json"
   });
 };
+
+export const createPoke = (params) => {
+  return $.ajax({
+    url: "/api/pokemon/",
+    method: "POST",
+    dataType: "json",
+    data: {poke: params}
+  });
+};

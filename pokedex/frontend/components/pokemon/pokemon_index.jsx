@@ -1,6 +1,7 @@
 import React from 'react';
 import PokemonIndexItem from './pokemon_index_item';
-import PokemonDetail from './pokemon_detail';
+import PokemonDetailContainer from './pokemon_detail_container';
+import { Route } from 'react-router-dom';
 
 class PokemonIndex extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class PokemonIndex extends React.Component {
     const pokemonItems = this.props.pokemon.map(poke => <PokemonIndexItem key={poke.id} pokemon={poke} />);
     return (
       <div>
-        <Route path={`/pokemon/${this.props.match.params.pokemonId}`} component={PokemonDetail} />
+        <Route path="/pokemon/:id" component={PokemonDetailContainer}/>
         <ul>
           {pokemonItems}
         </ul>
