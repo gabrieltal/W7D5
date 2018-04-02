@@ -1,6 +1,6 @@
 import React from 'react';
 import GreetingsContainer from './greetings_container';
-
+import {Provider } from 'react-redux';
 const App = () => (
   <div>
     <header>

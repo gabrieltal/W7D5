@@ -1,3 +1,3 @@
 json.user do
-  json.extract! @user, :username
+  json.extract! @user, :id, :username
 end

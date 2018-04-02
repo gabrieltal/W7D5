@@ -1,12 +1,10 @@
 import React from 'react';
-import GreetingsContainer from './greetings_container';
+import { Link } from 'react-router';
 
-class Greetings extends React.Component {
-  render () {
-    return (
-      <h3>Sup dude!!!!!!!!!!!!!</h3>
-    );
-  }
-}
+
+const Greetings = (props) => (
+  props.currentUser ? <h3>I cry</h3> : <h3>All the time</h3>
+);
+
 
 export default Greetings;

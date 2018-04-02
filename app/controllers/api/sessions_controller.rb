@@ -9,14 +9,14 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      return json: ["Invalid credentials!!!!"], status: 401
+      render json: ["Invalid credentials!!!!"], status: 401
     end
   end
 
   def destroy
     if current_user
       logout
-      render "api/users"
+      render "api/users/show"
     else
       render json: ['No current user to log out'], status: 404
     end

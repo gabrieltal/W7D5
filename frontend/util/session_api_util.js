@@ -1,26 +1,26 @@
-export const signup = (userForm) => (
+export const signup = (user) => (
   $.ajax({
-    url: '/api/users',
+    url: '/api/user',
     method: 'POST',
     data: {
-      user: userForm
+      user
     }
   })
 );
 
-export const login = (userForm) => (
+export const login = (user) => (
   $.ajax({
-    url: 'api/session',
+    url: '/api/session',
     method: 'POST',
     data: {
-      user: userForm
+      user
     }
   })
 );
 
 export const logout = () => (
   $.ajax({
-    url: 'api/session',
+    url: '/api/session',
     method: 'DELETE'
   })
 );
