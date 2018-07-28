@@ -1,0 +1,54 @@
+/* PHASE 3: Layout */
+.content {
+  width: 900px;
+  margin: auto;
+  background-color: white;
+  min-height: 200px;
+  display: flex;
+  justify-content: space-between;
+  border-left:  1px solid #ccc;
+  border-bottom:  1px solid #ccc;
+  border-right:  1px solid #ccc;
+}
+
+.content-main {
+  border-left: 1px solid #ccc;
+  width: 75%;
+}
+
+.content-sidebar {
+  width: 25%;
+}
+
+footer {
+  width: 900px;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-left:  1px solid #ccc;
+  border-bottom:  1px solid #ccc;
+  border-right:  1px solid #ccc;
+  box-sizing: border-box;
+  padding: 10px;
+  color: #aaa;
+  font-size: 14px;
+  align-content: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer > p {
+  margin: 10px;
+}
+
+footer > ul > li {
+  margin: 10px;
+}
+
+footer > ul > li:hover {
+  color: black;
+}
