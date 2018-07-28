@@ -1,0 +1,24 @@
+<h1> <%= @album.title %> </h1>
+
+<h3>
+  <%= @album.year %>
+  <br>
+  <%= @album.album_type %>
+</h3>
+<h4>Tracklist</h4>
+<ul>
+  <% tracks = Track.where(["tracks.album_id = ?", @album.id]) %>
+    <% tracks.each do |track| %>
+    <li><a href="<%= tracks_url(track) %>"><%= track.title %></a></li>
+    <% end %>
+</ul>
+<form action="<%=edit_album_url(@album)%>" method="get">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>"/>
+  <input type="submit" value="Edit Album">
+</form><br>
+
+<form action="<%=album_url(@album)%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>"/>
+  <input type="submit" value="Delete Album">
+</form><br>

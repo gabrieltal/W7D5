@@ -1,0 +1,13 @@
+<h1>Create an account! </h1>
+<form action="<%= users_url %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+  <label>Enter your email
+    <input type="text" name="user[email]" value=""/>
+  </label><br>
+
+  <label>Top Secret password
+    <input type="password" name="user[password]" value=""/>
+  </label><br>
+
+  <button>Create account!</button>
+</form>
