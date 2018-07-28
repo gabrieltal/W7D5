@@ -1,0 +1,28 @@
+.sections {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top:10px;
+  padding-bottom: 10px;
+  align-items: center;
+  border-bottom: 1px solid $light-gray;
+
+  #section_items {
+    display: flex;
+    justify-content: space-between;
+    width: 75vw;
+    align-items: center;
+    margin: 0 auto;
+  }
+  li {
+    text-transform: capitalize;
+  }
+  a:hover {
+    text-decoration: underline;
+    background-color: $light-gray;
+  }
+
+  li:last-child{
+    text-transform: uppercase;
+  }
+}
