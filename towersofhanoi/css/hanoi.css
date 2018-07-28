@@ -1,0 +1,43 @@
+figure {
+  display: flex;
+  justify-content: space-around;
+  height: 250px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border-bottom: 5px solid maroon;
+  float: left;
+  padding: 0 0 10px 0;
+  margin: 0 10px;
+  justify-content: flex-end;
+}
+
+li {
+  align-self: center;
+  list-style-type: none;
+  background-color: cornflowerblue;
+  height: 50px;
+  width: 180px;
+  margin-top: 10px;
+  border-radius: 50px;
+}
+
+.disk1 {
+  width: 80px;
+}
+
+.disk2 {
+  width: 140px;
+}
+
+.disk3 {
+  width: 200px;
+}
