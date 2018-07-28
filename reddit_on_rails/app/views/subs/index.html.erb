@@ -1,0 +1,12 @@
+<%= link_to 'create a new sub', new_sub_url %>
+<ul>
+  <% @subs.each do |sub| %>
+    <li>
+      <% if sub.moderator_id == current_user.id %>
+        <%= link_to 'edit sub', edit_sub_url(sub) %>
+      <% end %>
+      <%= link_to sub.title, sub_url(sub) %>
+      created by: <%= link_to User.find(sub.moderator_id).username, user_url(sub.moderator_id) %>
+    </li>
+  <% end %>
+</ul>

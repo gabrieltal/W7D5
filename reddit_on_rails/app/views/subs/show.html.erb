@@ -1,0 +1,15 @@
+<h1><%= @sub.title %></h1>
+<h3><%= @sub.description %></h3>
+
+ <ul>
+    <% @sub.posts.each do |post| %>
+      <li><%= link_to post.title, post_url(post) %>
+        by: <%= link_to User.find(post.author_id).username, user_url(post.author_id) %>
+        <% if post.author_id == current_user.id %>
+          <li><%= link_to 'edit post', edit_post_url(post) %></li>
+        <% end %>
+      </li>
+    <% end %>
+ </ul>
+
+ <%= link_to 'back to all subs', subs_url %>
